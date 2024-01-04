@@ -22,5 +22,17 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+    - run: mvn --batch-mode --update-snapshots verify
+    - run: mkdir artifact && cp target/*.jar artifact
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Package
+        path: artifact
+
+    # Upload artifacts
+    - name: Upload Distributable Jar
+      id: upload-final
+      uses: actions/upload-artifact@v3
+      with:
+        name: dist
+        path: ./target/Brewery.jar
