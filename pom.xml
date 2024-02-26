@@ -268,7 +268,7 @@
 			<!-- https://github.com/Slimefun/Slimefun4/releases -->
 			<groupId>com.github.Slimefun</groupId>
 			<artifactId>Slimefun4</artifactId>
-			<version>RC-36</version>
+			<version>RC-37</version>
 			<scope>provided</scope>
 		</dependency>
 		<!--<dependency>
