@@ -24,7 +24,7 @@ jobs:
         cache: maven
     - run: mvn --batch-mode --update-snapshots verify
     - run: mkdir artifact && cp target/*.jar artifact
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: Package
         path: artifact
@@ -35,4 +35,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: dist
-        path: ./artifact/Brewery.jar
+        path: ./target/Brewery.jar
